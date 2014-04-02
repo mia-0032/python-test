@@ -1,6 +1,14 @@
 # -*- coding:utf-8 -*-
 
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.dirname(sys.argv[0])) + os.sep + '..' + os.sep + 'src')
+
 import unittest
+
+from mock import Mock, patch
+from use_mock import HogehogeDao, CalculationModel
+
 
 class SideEffectTestResult(object):
     """side_effectの返り値用
@@ -64,4 +72,5 @@ class CalculationModelTestCase(unittest.TestCase):
         # 返り値が変わっていることを確認。
         self.assertIsInstance(test_obj.execute(), SideEffectTestResult)
 
-unittest.main()
+if __name__ == "__main__":
+    unittest.main()
