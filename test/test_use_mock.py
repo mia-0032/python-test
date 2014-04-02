@@ -57,7 +57,7 @@ class CalculationModelTestCase(unittest.TestCase):
     def test_execute_3(self):
         """with構文とpatch()を使って置き換えてのテスト
         """
-        with patch('__main__.HogehogeDao') as mock_dao:
+        with patch('use_mock.HogehogeDao') as mock_dao:
             mock_dao.find.return_value = 'with_mock_test'
             test_obj = CalculationModel(mock_dao)
             self.assertEqual('with_mock_test', test_obj.execute())
