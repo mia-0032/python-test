@@ -1,7 +1,5 @@
 # -*- coding:utf-8 -*-
 
-from mock import Mock, patch
-
 
 # DBにつなぐのでテストのときは使いたくないクラス
 class HogehogeDao(object):
